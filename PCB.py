@@ -11,6 +11,7 @@ class PCB:
             self.parent = parent
             self.children = LL()
             self.resources = LL()
+            self.priority = priority
 
     def __init__(self, size=16):
         self.size = size
@@ -19,6 +20,12 @@ class PCB:
         self.running = 0
         self.RL = RL()
         self.RCB = RCB()
+
+        #start the first process. 
+        self.PCB[0] = self.Process(None)    
+        self.RL.add(0, 0)                  
+
+        self.running = 0
 
 
     def create(self,priority):
