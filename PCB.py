@@ -11,12 +11,11 @@ class PCB:
             self.parent = parent
             self.children = LL()
             self.resources = LL()
-            self.priority = priority
+            #self.priority = Priority
 
     def __init__(self, size=16):
         self.size = size
         self.PCB = [None] * self.size
-        self.PCB[0] = self.Process(None)
         self.running = 0
         self.RL = RL()
         self.RCB = RCB()
